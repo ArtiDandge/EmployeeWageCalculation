@@ -11,7 +11,7 @@ namespace EmployeeWageCalculation
         public const int NUM_OF_WORKING_DAYS = 2;
         public const int MAX_HRS_IN_MONTH = 10;
 
-        public static int computeEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        public static int computeEmpWage()
         {
             //Variables
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
@@ -43,8 +43,7 @@ namespace EmployeeWageCalculation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcom to Employee Wage Calculation Project !");
-            computeEmpWage("DMart", 20,4,10);
-            computeEmpWage("Relience", 10, 4, 20);
+            computeEmpWage();
         }
     }
 }
