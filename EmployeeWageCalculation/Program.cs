@@ -30,9 +30,6 @@ namespace EmployeeWageCalculation
         private int maxHoursPerMonth;
         private int totalEmpWage;
 
-<<<<<<< HEAD
-        public static int computeEmpWage()
-=======
         public EmpBuilderObject(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             this.company = company;
@@ -41,7 +38,7 @@ namespace EmployeeWageCalculation
             this.maxHoursPerMonth = maxHoursPerMonth;
         }
         public void computeEmpWage()
->>>>>>> 68d669ac9f8f2c01fcd5c894857723da7f1d2711
+
         {
             //Variables
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
@@ -71,12 +68,10 @@ namespace EmployeeWageCalculation
         }
         public string toString()
         {
-<<<<<<< HEAD
-            Console.WriteLine("Welcom to Employee Wage Calculation Project !");
-            computeEmpWage();
-=======
+                           
+
             return "Total Emp Wage for Company : " + this.company + "is :" + this.totalEmpWage;
->>>>>>> 68d669ac9f8f2c01fcd5c894857723da7f1d2711
+
         }
 
 
