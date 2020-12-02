@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EmployeeWageCalculation
 {
-    public class EmpBuilderArray
+    public class EmpBuilderArray: IComputeEmpWage
     {
         //Constants
         public const int IS_PART_TIME = 1;
@@ -10,15 +11,21 @@ namespace EmployeeWageCalculation
 
         private int numOfComapy = 0;
         private CompanyEmpWage[] companyEmpWageArray;
+        private Dictionary<string, CompanyEmpWage> companyToEmpWageMap;
 
         public EmpBuilderArray()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
-        }
-        public void addComapnyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
-        {
+            this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();
+           
 
+        }
+
+        public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        {
             companyEmpWageArray[numOfComapy] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            companyToEmpWageMap.Add(company, companyEmpWage);
             numOfComapy++;
         }
 
@@ -29,7 +36,8 @@ namespace EmployeeWageCalculation
                 companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(this.companyEmpWageArray[i]));
                 Console.WriteLine(this.companyEmpWageArray[i].toString());
             }
-        }
+        }      
+        
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
 
         {
@@ -60,7 +68,14 @@ namespace EmployeeWageCalculation
 
         }
 
-
+       
+        public int getTotalWage(string company)
+        {
+            Console.WriteLine("Inside GetTotalWage Method");
+            int result = this.companyToEmpWageMap[company].totalEmpWage;
+            Console.WriteLine("TotalWage {0}", result);
+            return result;
+        }
     }
 
 }
