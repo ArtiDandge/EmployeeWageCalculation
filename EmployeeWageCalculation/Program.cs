@@ -30,6 +30,7 @@ namespace EmployeeWageCalculation
         private int maxHoursPerMonth;
         private int totalEmpWage;
 
+
         public EmpBuilderObject(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             this.company = company;
@@ -67,7 +68,9 @@ namespace EmployeeWageCalculation
         }
         public string toString()
         {
+
             return "Total Emp Wage for Company : " + this.company + "is :" + this.totalEmpWage;
+
         }
 
 
