@@ -4,18 +4,48 @@ namespace EmployeeWageCalculation
 {
     class Program
     {
+       
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Welcom to Employee Wage Calculation Project !");
+            EmpBuilderObject dMart = new EmpBuilderObject("DMart",20,2,10);
+            EmpBuilderObject relience = new EmpBuilderObject("Relience", 10,4,20);
+            dMart.computeEmpWage();
+            Console.WriteLine(dMart.toString());
+            relience.computeEmpWage();
+            Console.WriteLine(relience.toString());
+
+
+        }
+    }
+    public class EmpBuilderObject {
         //Constants
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
-        public const int EMP_RATE_PER_HOUR = 20;
-        public const int NUM_OF_WORKING_DAYS = 2;
-        public const int MAX_HRS_IN_MONTH = 10;
+    
+        private string company;
+        private int empRatePerHour;
+        private int numOfWorkingDays;
+        private int maxHoursPerMonth;
+        private int totalEmpWage;
 
+<<<<<<< HEAD
         public static int computeEmpWage()
+=======
+        public EmpBuilderObject(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        {
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.numOfWorkingDays = numOfWorkingDays;
+            this.maxHoursPerMonth = maxHoursPerMonth;
+        }
+        public void computeEmpWage()
+>>>>>>> 68d669ac9f8f2c01fcd5c894857723da7f1d2711
         {
             //Variables
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+            while (totalEmpHrs <= this.maxHoursPerMonth && totalWorkingDays < this.numOfWorkingDays)
             {
                 Random random = new Random();
                 //Computation
@@ -35,15 +65,20 @@ namespace EmployeeWageCalculation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day# : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
-            int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total Emp Wage : " + totalEmpWage);
-            return totalEmpWage;
+            totalEmpWage = totalEmpHrs * this.empRatePerHour;
+            Console.WriteLine("Total Emp Wage for Company: " + company + " is " + totalEmpWage);
+            
         }
-        
-        static void Main(string[] args)
+        public string toString()
         {
+<<<<<<< HEAD
             Console.WriteLine("Welcom to Employee Wage Calculation Project !");
             computeEmpWage();
+=======
+            return "Total Emp Wage for Company : " + this.company + "is :" + this.totalEmpWage;
+>>>>>>> 68d669ac9f8f2c01fcd5c894857723da7f1d2711
         }
+
+
     }
 }
