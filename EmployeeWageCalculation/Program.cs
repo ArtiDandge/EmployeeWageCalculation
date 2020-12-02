@@ -14,6 +14,7 @@ namespace EmployeeWageCalculation
             empWageBuilder.addCompanyEmpWage("Relience", 10, 4, 20);
             empWageBuilder.computeEmpWage();
             Console.WriteLine("Total Wage for DMart Comapny "+ empWageBuilder.getTotalWage("DMart"));
+            Console.WriteLine("Total Wage for Relience Comapny " + empWageBuilder.getTotalWage("Relience"));
         }
 
     }
