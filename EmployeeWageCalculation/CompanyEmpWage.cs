@@ -8,7 +8,8 @@ namespace EmployeeWageCalculation
         public int numOfWorkingDays;
         public int maxHoursPerMonth;
         public int totalEmpWage;
-
+        public int dailyWage;
+        public int TotalWageAlongWithDailyWage;
         public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             this.company = company;
@@ -24,7 +25,7 @@ namespace EmployeeWageCalculation
 
         public string toString()
         {
-            return "Total Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage;
+            return "Total Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage +"\n Daily Wage for Company : " + this.company + " is :" + this.dailyWage + "\n Total  Emp wage along with daily Wage is " + this.TotalWageAlongWithDailyWage;
         }
     }
 }

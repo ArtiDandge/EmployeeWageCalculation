@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EmployeeWageCalculation
 {
-    public class EmpBuilderArray: IComputeEmpWage
+    public class EmpBuilderArray : IComputeEmpWage
     {
         //Constants
         public const int IS_PART_TIME = 1;
@@ -16,7 +16,7 @@ namespace EmployeeWageCalculation
         {
             this.companyEmpWaeList = new LinkedList<CompanyEmpWage>();
             this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();
-           
+
 
         }
 
@@ -25,7 +25,7 @@ namespace EmployeeWageCalculation
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             this.companyEmpWaeList.AddLast(companyEmpWage);
             this.companyToEmpWageMap.Add(company, companyEmpWage);
-           
+
         }
 
         public void computeEmpWage()
@@ -35,8 +35,8 @@ namespace EmployeeWageCalculation
                 companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
                 Console.WriteLine(companyEmpWage.toString());
             }
-        }      
-        
+        }
+
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
 
         {
@@ -63,9 +63,12 @@ namespace EmployeeWageCalculation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day# : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
+            companyEmpWage.dailyWage = empHrs * companyEmpWage.empRatePerHour;
+            companyEmpWage.TotalWageAlongWithDailyWage = totalEmpHrs * companyEmpWage.empRatePerHour + companyEmpWage.dailyWage;
             return totalEmpHrs * companyEmpWage.empRatePerHour;
 
         }
+    
 
        
         public int getTotalWage(string company)
