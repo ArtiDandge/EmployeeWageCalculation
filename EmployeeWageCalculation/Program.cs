@@ -4,10 +4,8 @@ namespace EmployeeWageCalculation
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-
             Console.WriteLine("Welcome to Employee Wage Calculation Project !");
             EmpBuilderArray empWageBuilder = new EmpBuilderArray();
             empWageBuilder.addCompanyEmpWage("DMart", 20, 2, 10);
@@ -16,7 +14,5 @@ namespace EmployeeWageCalculation
             Console.WriteLine("Total Wage for DMart Comapny "+ empWageBuilder.getTotalWage("DMart"));
             Console.WriteLine("Total Wage for Relience Comapny " + empWageBuilder.getTotalWage("Relience"));
         }
-
     }
-
 }
