@@ -3,14 +3,8 @@ using System.Collections.Generic;
 
 namespace EmployeeWageCalculation
 {
-<<<<<<< HEAD
     public class EmpBuilderArray : IComputeEmpWage
     {
-        //Constants
-=======
-    public class EmpBuilderArray: IComputeEmpWage
-    { 
->>>>>>> 898d7d1fb4536466984ff56d988dfeebfd378ea1
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
@@ -20,13 +14,7 @@ namespace EmployeeWageCalculation
         public EmpBuilderArray()
         {
             this.companyEmpWaeList = new LinkedList<CompanyEmpWage>();
-<<<<<<< HEAD
             this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();
-
-
-=======
-            this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();         
->>>>>>> 898d7d1fb4536466984ff56d988dfeebfd378ea1
         }
 
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
@@ -34,10 +22,6 @@ namespace EmployeeWageCalculation
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             this.companyEmpWaeList.AddLast(companyEmpWage);
             this.companyToEmpWageMap.Add(company, companyEmpWage);
-<<<<<<< HEAD
-
-=======
->>>>>>> 898d7d1fb4536466984ff56d988dfeebfd378ea1
         }
 
         public void computeEmpWage()
@@ -48,11 +32,6 @@ namespace EmployeeWageCalculation
                 Console.WriteLine(companyEmpWage.toString());
             }
         }
-<<<<<<< HEAD
-
-        private int computeEmpWage(CompanyEmpWage companyEmpWage)
-=======
->>>>>>> 898d7d1fb4536466984ff56d988dfeebfd378ea1
 
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
         {
@@ -77,17 +56,9 @@ namespace EmployeeWageCalculation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
-            companyEmpWage.dailyWage = empHrs * companyEmpWage.empRatePerHour;
-            companyEmpWage.TotalWageAlongWithDailyWage = totalEmpHrs * companyEmpWage.empRatePerHour + companyEmpWage.dailyWage;
             return totalEmpHrs * companyEmpWage.empRatePerHour;
         }
-<<<<<<< HEAD
-    
 
-       
-=======
-        
->>>>>>> 898d7d1fb4536466984ff56d988dfeebfd378ea1
         public int getTotalWage(string company)
         {
             return this.companyToEmpWageMap[company].totalEmpWage;
